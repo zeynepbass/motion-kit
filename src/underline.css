@@ -1,0 +1,23 @@
+.motion-underline {
+  text-decoration: none;
+  background-image: linear-gradient(
+    var(--motion-underline-color, currentColor),
+    var(--motion-underline-color, currentColor)
+  );
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0 var(--motion-underline-thickness, 2px);
+  padding-bottom: 0.15em;
+  transition: background-size var(--motion-underline-duration, 300ms) ease;
+}
+
+.motion-underline:hover,
+.motion-underline:focus-visible {
+  background-size: 100% var(--motion-underline-thickness, 2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-underline {
+    transition: none;
+  }
+}

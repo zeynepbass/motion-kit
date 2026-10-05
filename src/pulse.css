@@ -1,0 +1,21 @@
+.motion-pulse {
+  animation: motion-pulse var(--motion-pulse-duration, 2s) ease-out infinite;
+}
+
+@keyframes motion-pulse {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--motion-pulse-color, currentColor) 55%, transparent);
+  }
+
+  70%,
+  100% {
+    box-shadow: 0 0 0 var(--motion-pulse-size, 10px) transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-pulse {
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--motion-pulse-color, currentColor) 30%, transparent);
+    animation: none;
+  }
+}

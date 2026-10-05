@@ -1,0 +1,76 @@
+.motion-button-lift {
+  transition:
+    transform 200ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 200ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.motion-button-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.motion-button-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+    110deg,
+    transparent 30%,
+    var(--motion-shine-color, rgb(255 255 255 / 0.4)) 50%,
+    transparent 70%
+  );
+  transform: translateX(-100%);
+  pointer-events: none;
+}
+
+.motion-button-lift:focus-visible {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: var(--motion-lift-shadow, 0 10px 20px -8px rgb(0 0 0 / 0.35));
+}
+
+/* The transition lives on the active state so the shine resets instantly. */
+.motion-button-shine:focus-visible::after {
+  transform: translateX(100%);
+  transition: transform var(--motion-shine-duration, 700ms) ease;
+}
+
+@media (hover: hover) {
+  .motion-button-lift:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: var(--motion-lift-shadow, 0 10px 20px -8px rgb(0 0 0 / 0.35));
+  }
+
+  .motion-button-shine:hover::after {
+    transform: translateX(100%);
+    transition: transform var(--motion-shine-duration, 700ms) ease;
+  }
+}
+
+.motion-button-lift:active {
+  transform: translateY(0) scale(0.99);
+}
+
+.motion-button-lift:disabled {
+  transform: none;
+  box-shadow: none;
+}
+
+.motion-button-shine:disabled::after {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-button-lift {
+    transition: box-shadow 200ms ease;
+  }
+
+  .motion-button-lift:hover,
+  .motion-button-lift:focus-visible,
+  .motion-button-lift:active {
+    transform: none;
+  }
+
+  .motion-button-shine::after {
+    display: none;
+  }
+}

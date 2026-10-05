@@ -1,0 +1,23 @@
+.motion-gradient {
+  background-image: linear-gradient(
+    90deg,
+    var(--motion-gradient-colors, #ec4899, #a855f7, #3b82f6, #06b6d4, #ec4899)
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: motion-gradient var(--motion-gradient-duration, 6s) linear infinite;
+}
+
+@keyframes motion-gradient {
+  to {
+    background-position: 200% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-gradient {
+    animation: none;
+  }
+}

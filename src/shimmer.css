@@ -1,0 +1,35 @@
+.motion-shimmer {
+  background-color: var(
+    --motion-shimmer-base,
+    color-mix(in srgb, currentColor 55%, transparent)
+  );
+  background-image: linear-gradient(
+    110deg,
+    transparent 40%,
+    var(--motion-shimmer-highlight, currentColor) 50%,
+    transparent 60%
+  );
+  background-repeat: no-repeat;
+  background-size: 200% 100%;
+  background-position: 130% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: motion-shimmer var(--motion-shimmer-duration, 3.5s) ease-in-out infinite;
+}
+
+/* The sweep ends at 60% so every cycle has a short rest. */
+@keyframes motion-shimmer {
+  60%,
+  100% {
+    background-position: -30% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-shimmer {
+    background: none;
+    -webkit-text-fill-color: currentColor;
+    animation: none;
+  }
+}

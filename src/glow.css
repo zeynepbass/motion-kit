@@ -1,0 +1,19 @@
+.motion-glow {
+  text-shadow:
+    0 0 0.1em color-mix(in srgb, var(--motion-glow-color, currentColor) 70%, transparent),
+    0 0 0.4em color-mix(in srgb, var(--motion-glow-color, currentColor) 50%, transparent),
+    0 0 1em color-mix(in srgb, var(--motion-glow-color, currentColor) 30%, transparent);
+  animation: motion-glow var(--motion-glow-duration, 4s) ease-in-out infinite alternate;
+}
+
+@keyframes motion-glow {
+  from {
+    opacity: 0.85;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-glow {
+    animation: none;
+  }
+}

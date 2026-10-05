@@ -1,0 +1,57 @@
+{
+  "name": "motion-kit-css",
+  "version": "1.0.0",
+  "description": "Small CSS-only collection of text, border and button motion effects.",
+  "keywords": [
+    "css",
+    "animation",
+    "effects",
+    "gradient-text",
+    "shimmer",
+    "glow",
+    "animated-border",
+    "button",
+    "hover",
+    "css-only"
+  ],
+  "license": "MIT",
+  "author": "Zeynep Bas",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zeynepbass/motion-css.git"
+  },
+  "homepage": "https://github.com/zeynepbass/motion-css#readme",
+  "bugs": "https://github.com/zeynepbass/motion-css/issues",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.css",
+  "style": "./dist/index.css",
+  "exports": {
+    ".": {
+      "style": "./dist/index.css",
+      "default": "./dist/index.css"
+    },
+    "./min": "./dist/index.min.css",
+    "./*.css": "./dist/*.css",
+    "./package.json": "./package.json"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "scripts": {
+    "clean": "node -e \"fs.rmSync('dist', { recursive: true, force: true })\"",
+    "build": "npm run clean && lightningcss src/gradient.css src/shimmer.css src/glow.css src/border.css src/buttons.css src/pulse.css src/underline.css --output-dir dist && lightningcss --bundle src/index.css --output-file dist/index.css && lightningcss --bundle --minify src/index.css --output-file dist/index.min.css",
+    "pretest": "npm run build",
+    "test": "node --test",
+    "prepack": "npm run build",
+    "prepublishOnly": "npm test"
+  },
+  "devDependencies": {
+    "lightningcss-cli": "^1.33.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
