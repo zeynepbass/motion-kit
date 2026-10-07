@@ -18,7 +18,6 @@
   animation: motion-shimmer var(--motion-shimmer-duration, 3.5s) ease-in-out infinite;
 }
 
-/* The sweep ends at 60% so every cycle has a short rest. */
 @keyframes motion-shimmer {
   60%,
   100% {

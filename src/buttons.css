@@ -28,7 +28,6 @@
   box-shadow: var(--motion-lift-shadow, 0 10px 20px -8px rgb(0 0 0 / 0.35));
 }
 
-/* The transition lives on the active state so the shine resets instantly. */
 .motion-button-shine:focus-visible::after {
   transform: translateX(100%);
   transition: transform var(--motion-shine-duration, 700ms) ease;

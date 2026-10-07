@@ -11,9 +11,14 @@
   transition: background-size var(--motion-underline-duration, 300ms) ease;
 }
 
-.motion-underline:hover,
 .motion-underline:focus-visible {
   background-size: 100% var(--motion-underline-thickness, 2px);
+}
+
+@media (hover: hover) {
+  .motion-underline:hover {
+    background-size: 100% var(--motion-underline-thickness, 2px);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

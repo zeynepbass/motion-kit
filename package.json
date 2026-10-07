@@ -18,10 +18,10 @@
   "author": "Zeynep Bas",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zeynepbass/motion-css.git"
+    "url": "git+https://github.com/zeynepbass/motion-kit.git"
   },
-  "homepage": "https://github.com/zeynepbass/motion-css#readme",
-  "bugs": "https://github.com/zeynepbass/motion-css/issues",
+  "homepage": "https://github.com/zeynepbass/motion-kit#readme",
+  "bugs": "https://github.com/zeynepbass/motion-kit/issues",
   "type": "module",
   "files": [
     "dist"

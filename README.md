@@ -1,6 +1,8 @@
-# motion-css
+# motion-kit-css
 
 A small set of CSS-only motion effects for modern interfaces. No JavaScript, no framework, no configuration: import one stylesheet and add a class.
+
+![Preview of the motion-kit-css effects](demo/preview.gif)
 
 ## Features
 
@@ -38,11 +40,16 @@ Then add a class:
 <h1 class="motion-gradient">Zeynep</h1>
 ```
 
-Other entry points:
+The minified bundle:
 
 ```css
-@import "motion-kit-css/min";          /* minified bundle */
-@import "motion-kit-css/gradient.css"; /* a single effect */
+@import "motion-kit-css/min";
+```
+
+A single effect:
+
+```css
+@import "motion-kit-css/gradient.css";
 ```
 
 Without a build step:
@@ -57,6 +64,8 @@ Every effect is one class. Custom properties are optional and can be set on the 
 
 ### Gradient text
 
+<img src="demo/effects/gradient.gif" alt="Animated gradient text" width="420">
+
 ```html
 <h1 class="motion-gradient">Zeynep</h1>
 ```
@@ -64,6 +73,8 @@ Every effect is one class. Custom properties are optional and can be set on the 
 `--motion-gradient-colors` (repeat the first color at the end for a seamless loop), `--motion-gradient-duration`
 
 ### Shimmer text
+
+<img src="demo/effects/shimmer.gif" alt="Shimmer text" width="420">
 
 ```html
 <h1 class="motion-shimmer">Frontend Developer</h1>
@@ -75,6 +86,8 @@ The text is dimmed slightly and a highlight in its own color sweeps across it.
 
 ### Glow text
 
+<img src="demo/effects/glow.gif" alt="Glow text" width="420">
+
 ```html
 <h1 class="motion-glow">Zeynep</h1>
 ```
@@ -84,6 +97,8 @@ Glows in the text color by default. Works best with light text on a dark backgro
 `--motion-glow-color`, `--motion-glow-duration`
 
 ### Gradient border
+
+<img src="demo/effects/border.gif" alt="Animated gradient border" width="420">
 
 ```html
 <div class="motion-border">Content</div>
@@ -95,6 +110,8 @@ The inside of the element is painted with `--motion-border-fill`, which defaults
 
 ### Button lift
 
+<img src="demo/effects/button-lift.gif" alt="Button lifting on hover" width="420">
+
 ```html
 <button class="motion-button-lift">Get Started</button>
 ```
@@ -102,6 +119,8 @@ The inside of the element is painted with `--motion-border-fill`, which defaults
 `--motion-lift-shadow`
 
 ### Button shine
+
+<img src="demo/effects/button-shine.gif" alt="Shine sweeping across a button on hover" width="420">
 
 ```html
 <button class="motion-button-shine">Explore</button>
@@ -113,6 +132,8 @@ Sets `position: relative` and `overflow: hidden` on the element and uses its `::
 
 ### Pulse
 
+<img src="demo/effects/pulse.gif" alt="Pulsing badge" width="420">
+
 ```html
 <span class="motion-pulse">New</span>
 ```
@@ -122,6 +143,8 @@ Animates `box-shadow`, so it replaces any shadow the element already has.
 `--motion-pulse-color`, `--motion-pulse-size`, `--motion-pulse-duration`
 
 ### Hover underline
+
+<img src="demo/effects/underline.gif" alt="Underline growing on hover" width="420">
 
 ```html
 <a class="motion-underline" href="#">About</a>

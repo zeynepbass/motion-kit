@@ -4,7 +4,6 @@
   initial-value: 0deg;
 }
 
-/* The fill layer hides the gradient behind the content, so it has to be opaque. */
 .motion-border {
   border: var(--motion-border-width, 2px) solid transparent;
   border-radius: var(--motion-border-radius, 12px);
