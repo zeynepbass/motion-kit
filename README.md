@@ -1,30 +1,30 @@
 # motion-kit-css
 
-A small set of CSS-only motion effects for modern interfaces. No JavaScript, no framework, no configuration: import one stylesheet and add a class.
+Modern arayüzler için CSS ile oluşturulmuş, küçük bir animasyon efektleri koleksiyonu. JavaScript, herhangi bir framework veya yapılandırma gerektirmez. Tek bir stil dosyasını içe aktarın ve istediğiniz sınıfı ekleyin.
 
-![Preview of the motion-kit-css effects](demo/preview.gif)
+![motion-kit-css efektlerinin önizlemesi](demo/preview.gif)
 
-## Features
+## Özellikler
 
-- Animated gradient text
-- Shimmer text
-- Glow text
-- Animated gradient border
-- Button lift and button shine hover effects
-- Pulse glow
-- Animated hover underline
-- Respects `prefers-reduced-motion`
-- About 1.2 kB minified and gzipped
+- Animasyonlu degrade metin
+- Işıltı efekti (shimmer) içeren metin
+- Parlama efekti (glow) içeren metin
+- Animasyonlu degrade kenarlık
+- Butonlarda yukarı kalkma ve parlama hover efektleri
+- Nabız şeklinde parıltı efekti
+- Hover sırasında animasyonlu alt çizgi
+- `prefers-reduced-motion` ayarını dikkate alır
+- Sıkıştırılmış ve Gzip uygulanmış boyutu yaklaşık 1,2 kB
 
-## Installation
+## Kurulum
 
 ```bash
 npm install motion-kit-css
 ```
 
-## Usage
+## Kullanım
 
-With a bundler (Vite, webpack, Parcel) or `postcss-import`:
+Vite, webpack, Parcel gibi bir paketleyiciyle veya `postcss-import` kullanarak:
 
 ```css
 @import "motion-kit-css";
@@ -34,127 +34,160 @@ With a bundler (Vite, webpack, Parcel) or `postcss-import`:
 import "motion-kit-css";
 ```
 
-Then add a class:
+Ardından ilgili sınıfı ekleyin:
 
 ```html
 <h1 class="motion-gradient">Zeynep</h1>
 ```
 
-The minified bundle:
+Sıkıştırılmış paketi kullanmak için:
 
 ```css
 @import "motion-kit-css/min";
 ```
 
-A single effect:
+Tek bir efekti içe aktarmak için:
 
 ```css
 @import "motion-kit-css/gradient.css";
 ```
 
-Without a build step:
+Herhangi bir derleme adımı kullanmadan:
 
 ```html
 <link rel="stylesheet" href="https://unpkg.com/motion-kit-css@1/dist/index.min.css">
 ```
 
-## Available Effects
+## Kullanılabilir Efektler
 
-Every effect is one class. Custom properties are optional and can be set on the element or any ancestor.
+Her efekt tek bir CSS sınıfıyla uygulanır. Özel CSS değişkenleri isteğe bağlıdır ve ilgili öğeye veya üst öğelerinden herhangi birine tanımlanabilir.
 
-### Gradient text
+### Degrade metin (Gradient Text)
 
-<img src="demo/effects/gradient.gif" alt="Animated gradient text" width="420">
+![Animasyonlu degrade metin](demo/effects/gradient.gif)
 
 ```html
 <h1 class="motion-gradient">Zeynep</h1>
 ```
 
-`--motion-gradient-colors` (repeat the first color at the end for a seamless loop), `--motion-gradient-duration`
+Kullanılabilir CSS değişkenleri:
 
-### Shimmer text
+- `--motion-gradient-colors`: Degrade renklerini belirler. Kesintisiz bir döngü elde etmek için ilk rengi listenin sonuna da ekleyin.
+- `--motion-gradient-duration`: Animasyonun süresini belirler.
 
-<img src="demo/effects/shimmer.gif" alt="Shimmer text" width="420">
+### Işıltılı metin (Shimmer Text)
+
+![Işıltılı metin](demo/effects/shimmer.gif)
 
 ```html
 <h1 class="motion-shimmer">Frontend Developer</h1>
 ```
 
-The text is dimmed slightly and a highlight in its own color sweeps across it.
+Metnin rengi hafifçe soluklaştırılır ve metnin üzerinde kendi renginde bir ışık vurgusu hareket eder.
 
-`--motion-shimmer-base`, `--motion-shimmer-highlight`, `--motion-shimmer-duration`
+Kullanılabilir CSS değişkenleri:
 
-### Glow text
+- `--motion-shimmer-base`: Metnin temel rengini belirler.
+- `--motion-shimmer-highlight`: Işık vurgusunun rengini belirler.
+- `--motion-shimmer-duration`: Animasyonun süresini belirler.
 
-<img src="demo/effects/glow.gif" alt="Glow text" width="420">
+### Parlayan metin (Glow Text)
+
+![Parlayan metin](demo/effects/glow.gif)
 
 ```html
 <h1 class="motion-glow">Zeynep</h1>
 ```
 
-Glows in the text color by default. Works best with light text on a dark background.
+Varsayılan olarak metnin kendi renginde bir parlama oluşturur. Koyu arka plan üzerindeki açık renkli metinlerle en iyi sonucu verir.
 
-`--motion-glow-color`, `--motion-glow-duration`
+Kullanılabilir CSS değişkenleri:
 
-### Gradient border
+- `--motion-glow-color`: Parlama rengini belirler.
+- `--motion-glow-duration`: Animasyonun süresini belirler.
 
-<img src="demo/effects/border.gif" alt="Animated gradient border" width="420">
+### Degrade kenarlık (Gradient Border)
 
-```html
-<div class="motion-border">Content</div>
-```
-
-The inside of the element is painted with `--motion-border-fill`, which defaults to the system `Canvas` color. Set it to your surface color; it has to be opaque.
-
-`--motion-border-fill`, `--motion-border-colors`, `--motion-border-width`, `--motion-border-radius`, `--motion-border-duration`
-
-### Button lift
-
-<img src="demo/effects/button-lift.gif" alt="Button lifting on hover" width="420">
+![Animasyonlu degrade kenarlık](demo/effects/border.gif)
 
 ```html
-<button class="motion-button-lift">Get Started</button>
+<div class="motion-border">İçerik</div>
 ```
 
-`--motion-lift-shadow`
+Öğenin iç kısmı `--motion-border-fill` değişkeniyle renklendirilir. Varsayılan olarak sistemin `Canvas` rengi kullanılır.
 
-### Button shine
+Bu değişkeni kendi arayüzünüzün yüzey rengine göre ayarlayın. Belirlenen rengin opak olması gerekir.
 
-<img src="demo/effects/button-shine.gif" alt="Shine sweeping across a button on hover" width="420">
+Kullanılabilir CSS değişkenleri:
+
+- `--motion-border-fill`: Kenarlığın iç kısmının rengini belirler.
+- `--motion-border-colors`: Degrade kenarlık renklerini belirler.
+- `--motion-border-width`: Kenarlığın kalınlığını belirler.
+- `--motion-border-radius`: Kenarlığın köşe yuvarlaklığını belirler.
+- `--motion-border-duration`: Animasyonun süresini belirler.
+
+### Butonun yukarı kalkması (Button Lift)
+
+![Hover sırasında yukarı kalkan buton](demo/effects/button-lift.gif)
 
 ```html
-<button class="motion-button-shine">Explore</button>
+<button class="motion-button-lift">Başlayın</button>
 ```
 
-Sets `position: relative` and `overflow: hidden` on the element and uses its `::after` pseudo-element.
+Kullanılabilir CSS değişkeni:
 
-`--motion-shine-color`, `--motion-shine-duration`
+- `--motion-lift-shadow`: Efekt sırasında kullanılacak gölgeyi belirler.
 
-### Pulse
+### Buton parlama efekti (Button Shine)
 
-<img src="demo/effects/pulse.gif" alt="Pulsing badge" width="420">
+![Hover sırasında buton üzerinde hareket eden ışık](demo/effects/button-shine.gif)
 
 ```html
-<span class="motion-pulse">New</span>
+<button class="motion-button-shine">Keşfet</button>
 ```
 
-Animates `box-shadow`, so it replaces any shadow the element already has.
+Bu efekt, öğeye `position: relative` ve `overflow: hidden` özelliklerini uygular. Ayrıca öğenin `::after` sözde öğesini kullanır.
 
-`--motion-pulse-color`, `--motion-pulse-size`, `--motion-pulse-duration`
+Kullanılabilir CSS değişkenleri:
 
-### Hover underline
+- `--motion-shine-color`: Parlama rengini belirler.
+- `--motion-shine-duration`: Animasyonun süresini belirler.
 
-<img src="demo/effects/underline.gif" alt="Underline growing on hover" width="420">
+### Nabız efekti (Pulse)
+
+![Nabız şeklinde parlayan rozet](demo/effects/pulse.gif)
 
 ```html
-<a class="motion-underline" href="#">About</a>
+<span class="motion-pulse">Yeni</span>
 ```
 
-Removes the default underline, so use it for navigation rather than links inside body text.
+Bu efekt `box-shadow` özelliğini animasyonlu hâle getirir. Bu nedenle öğede zaten bir gölge varsa mevcut gölgenin yerini alır.
 
-`--motion-underline-color`, `--motion-underline-thickness`, `--motion-underline-duration`
+Kullanılabilir CSS değişkenleri:
 
-### Customizing
+- `--motion-pulse-color`: Parlama rengini belirler.
+- `--motion-pulse-size`: Parlama boyutunu belirler.
+- `--motion-pulse-duration`: Animasyonun süresini belirler.
+
+### Hover alt çizgisi (Hover Underline)
+
+![Hover sırasında büyüyen alt çizgi](demo/effects/underline.gif)
+
+```html
+<a class="motion-underline" href="#">Hakkında</a>
+```
+
+Bu efekt varsayılan alt çizgiyi kaldırır. Bu nedenle gövde metninin içindeki bağlantılardan ziyade navigasyon bağlantılarında kullanılması önerilir.
+
+Kullanılabilir CSS değişkenleri:
+
+- `--motion-underline-color`: Alt çizginin rengini belirler.
+- `--motion-underline-thickness`: Alt çizginin kalınlığını belirler.
+- `--motion-underline-duration`: Animasyonun süresini belirler.
+
+### Özelleştirme
+
+Efektleri CSS değişkenleri aracılığıyla özelleştirebilirsiniz:
 
 ```css
 .hero-title {
@@ -163,25 +196,25 @@ Removes the default underline, so use it for navigation rather than links inside
 }
 ```
 
-## Accessibility
+## Erişilebilirlik
 
-When the user has `prefers-reduced-motion: reduce` enabled:
+Kullanıcı cihazında `prefers-reduced-motion: reduce` ayarı etkinse animasyonlar aşağıdaki şekilde davranır:
 
-- Gradient text, glow, pulse and the gradient border stay visible but stop animating.
-- Shimmer text falls back to its normal color.
-- Button lift keeps its shadow change without moving; button shine is disabled.
-- The underline appears instantly.
+- Degrade metin, parlama, nabız ve degrade kenarlık görünür kalır ancak animasyonları durur.
+- Işıltılı metin normal metin rengine döner.
+- Butonun yukarı kalkma efekti hareket etmeden gölge değişimini korur; buton parlama efekti devre dışı bırakılır.
+- Alt çizgi animasyon beklemeden anında görünür.
 
-Hover effects also apply on `:focus-visible`, and are limited to devices that can hover so they do not stick after a tap on touch screens.
+Hover efektleri `:focus-visible` durumunda da uygulanır. Ayrıca yalnızca hover desteği bulunan cihazlarda etkinleşir. Böylece dokunmatik ekranlarda bir öğeye dokunulduktan sonra efektin takılı kalması önlenir.
 
-## Browser Support
+## Tarayıcı Desteği
 
-Current versions of Chrome, Edge, Firefox and Safari.
+Chrome, Edge, Firefox ve Safari tarayıcılarının güncel sürümleri desteklenir.
 
-- Shimmer, glow and pulse use `color-mix()`: Chrome 111+, Firefox 113+, Safari 16.2+.
-- The border animation uses `@property`: Chrome 85+, Safari 16.4+, Firefox 128+. Older browsers show a static gradient border.
+- Işıltı, parlama ve nabız efektleri `color-mix()` kullanır: Chrome 111+, Firefox 113+, Safari 16.2+.
+- Kenarlık animasyonu `@property` kullanır: Chrome 85+, Safari 16.4+, Firefox 128+. Daha eski tarayıcılarda animasyonsuz, statik bir degrade kenarlık görüntülenir.
 
-## Development
+## Geliştirme
 
 ```bash
 npm install
@@ -189,16 +222,14 @@ npm run build
 npm test
 ```
 
-`src/` holds one file per effect, and `npm run build` writes the published CSS to `dist/`. Open `demo/index.html` after building to see every effect.
+`src/` klasöründe her efekt için ayrı bir dosya bulunur. `npm run build` komutu yayımlanmaya hazır CSS dosyalarını `dist/` klasörüne oluşturur.
 
-## Versioning
+Tüm efektleri görmek için derleme işleminden sonra `demo/index.html` dosyasını tarayıcıda açın.
 
-This project follows [Semantic Versioning](https://semver.org) (`MAJOR.MINOR.PATCH`):
+## Sürüm Yönetimi
 
-- `MAJOR`: a class or custom property is renamed or removed, or an effect changes in a way that can break existing layouts
-- `MINOR`: new effects or new custom properties
-- `PATCH`: bug fixes and visual refinements
+Bu proje, [Semantic Versioning](https://semver.org) (Anlamsal Sürümleme) standardını (`MAJOR.MINOR.PATCH`) kullanır:
 
-## License
-
-[MIT](LICENSE)
+- `MAJOR`: Bir sınıf veya özel CSS değişkeni yeniden adlandırılır ya da kaldırılırsa veya mevcut düzenleri bozabilecek bir efekt değişikliği yapılırsa artırılır.
+- `MINOR`: Yeni efektler veya yeni özel CSS değişkenleri eklendiğinde artırılır.
+- `PATCH`: Hata düzeltmeleri ve görsel iyileştirmeler yapıldığında artırılır.
