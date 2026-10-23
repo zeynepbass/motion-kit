@@ -2,6 +2,10 @@
 
 Modern arayüzler için CSS ile oluşturulmuş, küçük bir animasyon efektleri koleksiyonu. JavaScript, herhangi bir framework veya yapılandırma gerektirmez. Tek bir stil dosyasını içe aktarın ve istediğiniz sınıfı ekleyin.
 
+[![npm](https://img.shields.io/npm/v/motion-kit-css)](https://www.npmjs.com/package/motion-kit-css) [![lisans](https://img.shields.io/npm/l/motion-kit-css)](LICENSE)
+
+**Canlı demo:** [zeynepbas.dev/npm](https://www.zeynepbas.dev/npm) · **npm:** [npmjs.com/package/motion-kit-css](https://www.npmjs.com/package/motion-kit-css) · **GitHub:** [zeynepbass/motion-kit](https://github.com/zeynepbass/motion-kit)
+
 ![motion-kit-css efektlerinin önizlemesi](demo/preview.gif)
 
 ## Özellikler
